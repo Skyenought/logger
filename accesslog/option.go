@@ -45,8 +45,6 @@ import (
 	"context"
 	"time"
 
-	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/cloudwego/hertz/pkg/common/bytebufferpool"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 )
 
@@ -80,8 +78,7 @@ type (
 		enableLatency    bool
 	}
 
-	Option     func(o *options)
-	logTagFunc func(ctx context.Context, c *app.RequestContext, buf *bytebufferpool.ByteBuffer) (int, error)
+	Option func(o *options)
 )
 
 var defaultTagFormat = "[${time}] ${status} - ${latency} ${method} ${path}"
